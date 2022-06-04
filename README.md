@@ -45,3 +45,30 @@ function myFunction() {
   // code here CAN use carName
 }
 ```
+
+## If .. else statement
+```
+if (number > 10) {
+  console.log("Bigger than 10");
+} else if (number < 2) {
+  console.log("number is less than 2");
+} else {
+  console.log("number is between 2 and 9");
+}
+```
+
+## While loop
+```
+let i = 0;
+while (i < 0) {
+  console.log("Hello there");
+  i += 1;
+}
+```
+
+## For loop
+```
+for (let i = 0; i < 5; i++) {
+  console.log("Hello there" + i);
+}
+```
