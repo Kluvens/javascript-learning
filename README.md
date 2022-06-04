@@ -23,3 +23,19 @@ Things to notice:
 - ```!``` - logical not
 - ```typeof``` - returns the type of a variable
 - ```instanceof``` - returns true if an object is an instance of an object type
+
+## Functions
+A JavaScript function is a block of code designed to perform a particular task. e.g.
+```
+function myFunction(p1, p2) {
+  return p1 * p2;   // The function returns the product of p1 and p2
+}
+```
+
+Variables declared within a JavaScript function, become LOCAL to the function.
+```
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+```
