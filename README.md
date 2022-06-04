@@ -1,5 +1,11 @@
 # javascript-learning
 
+Javascript uses ```console.log()``` to print. e.g.
+```
+const years = 5;
+console.log(years);
+```
+
 ## Comments
 In javascript, single line comments start with ```//```. While multi-line comments start with ```/*``` and end with ```/*```.
 
