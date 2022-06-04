@@ -72,3 +72,25 @@ for (let i = 0; i < 5; i++) {
   console.log("Hello there" + i);
 }
 ```
+
+## Objects
+Objects are variables too. But objects can contain many values. The values are written as **name:value** pairs (name and value separated by a colon). Javascript objects cannot be compared.
+```
+const car = {type:"Fiat", model:"500", color:"white"};
+```
+
+Accessing object properties in two ways: ```objectName.propertyName``` or ```objectName["propertyName"]```
+
+Objects can also have methods. Methods are actions that can be performed on objects. Methods are stored in properties as function definitions. In javascript, the ```this``` keyword refers to an object.
+```
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+Accessing an object method via ```objectName.methodName()```
