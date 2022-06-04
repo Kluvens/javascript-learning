@@ -57,6 +57,34 @@ if (number > 10) {
 }
 ```
 
+## Switch statement
+```
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+  default:
+    text = "Not a day in a week";
+}
+```
+
 ## While loop
 ```
 let i = 0;
@@ -70,6 +98,28 @@ while (i < 0) {
 ```
 for (let i = 0; i < 5; i++) {
   console.log("Hello there" + i);
+}
+```
+
+## For in loop
+The JavaScript ```for in``` statement loops through the properties(keys) of an Object. If loop through an array, it refers to the index.
+```
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+for (let x in person) {
+  text += person[x];
+}
+```
+
+## For of loop
+The JavaScript ```for of``` statement loops through the values of an iterable object.
+```
+const cars = ["BMW", "Volvo", "Mini"];
+
+let text = "";
+for (let x of cars) {
+  text += x;
 }
 ```
 
