@@ -18,6 +18,12 @@ All JavaScript **variables** must be identified with **unique names**. These uni
 
 JavaScript can add strings and numbers: ```let x = "5" + 2 + 3;``` will get ```523```.
 
+Describing nothing:
+``` javascript
+const notexist = undefined
+const existbutnothing = null
+```
+
 ## Operators
 Javascript operators are very similar to other programming languages.
 Things to notice:
@@ -34,7 +40,11 @@ Things to notice:
 A JavaScript function is a block of code designed to perform a particular task. e.g.
 ```
 function myFunction(p1, p2) {
-  return p1 * p2;   // The function returns the product of p1 and p2
+  if (p1 > p2) {
+    return p2;
+  } else {
+    return p1;
+  }
 }
 ```
 
@@ -144,3 +154,72 @@ const person = {
 ```
 
 Accessing an object method via ```objectName.methodName()```
+
+## Collections
+### Sequential collections
+in sequential collections values are referenced by their integer index(key) that represents their location in an order.
+
+In javascript, sequential collections are represented by an array. And arrays are used for both C-style arrays and C-style linked lists.
+
+### Arrays
+Arrays are mutable ordered structures of the same type.
+
+``` javascript
+const names = ['hayden', 'jake', 'justin']
+// this can also be done
+// const names = new Array('hayden', 'jake', 'justin');
+
+// get the array
+console.log(`1 ${names}`);
+
+// get an item of an array
+console.log(`2 ${names[0]}`);
+
+// reassign value to the array
+names[1] = "Jake"
+
+// append to the array
+names.push('Rani');
+
+// check if an item is in the array
+console.log(names.includes('hayden'));
+
+// returns the number of elements
+console.log(names.length);
+
+// sort the array
+console.log(names.sort());
+
+// join() method also joins all array elements into a string
+console.log(names.join(" * "));
+
+// remove the last element from an array
+names.pop();
+
+// shift() method removes the first array element and shifts all other elements to a lower index.
+names.shift();
+
+// unshift() method adds a new element to the first place of an array, and unshifts order elements
+names.unshift('nick');
+
+// array elements can be deleted using the operator delete
+// but using delete leaves undefined holes in the array
+delete names[0];
+
+// concat() method creates a new array by merging existing arrays
+const myNames = names.concat(['more', 'names']);
+
+// the splice() method adds new items to an array
+names.splice(2, 0, "OK", "Kiwi");
+// the first parameter defines the position where new elements should be added
+// the second parameter defines how many elements should be removed
+// the rest of the parameters ("ok", "kiwi") define the new elements to be added
+// splice() can be used to remove elements
+names.splice(0, 1);
+
+// slice() method slices out a piece of an array into a new array
+const newNames = names.slice(1, 3);
+
+// javascript automatically converts an array to a comma separated string when a primitive value is expected.
+console.log(names.toString());
+```
