@@ -1,7 +1,7 @@
 # javascript-learning
 
 Javascript uses ```console.log()``` to print. e.g.
-```
+``` javascript
 const years = 5;
 console.log(years);
 ```
@@ -38,7 +38,7 @@ Things to notice:
 
 ## Functions
 A JavaScript function is a block of code designed to perform a particular task. e.g.
-```
+``` javascript
 function myFunction(p1, p2) {
   if (p1 > p2) {
     return p2;
@@ -49,7 +49,7 @@ function myFunction(p1, p2) {
 ```
 
 Variables declared within a JavaScript function, become LOCAL to the function.
-```
+``` javascript
 function myFunction() {
   let carName = "Volvo";
   // code here CAN use carName
@@ -506,3 +506,21 @@ Converting booleans to strings:
 String(false)      // returns "false"
 String(true)       // returns "true"
 ```
+
+## Arrow function
+``` javascript
+// before
+hello = function() {
+  return "Hello World!";
+}
+
+// with arrow function
+hello = () => {
+  return "Hello World!";
+}
+
+// arrow function with parameters
+hello = (val) => "Hello " + val;
+
+// arrow function without parentheses(when having only one parameter)
+hello = val => "Hello " + val;
