@@ -325,3 +325,84 @@ const cars = [
 
 cars.sort(function(a, b){return a.year - b.year});
 ```
+
+## Classes
+use the keyword ```class``` to create a class. And always add a method named ```constructor()```
+``` javascript
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+```
+
+using a class:
+``` javascript
+let myCar1 = new Car("Ford", 2014);
+let myCar2 = new Car("Audi", 2019);
+```
+
+class methods are created with the same syntax as object methods. methods are created after constructor.
+``` javascript
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+```
+
+## Modules
+JavaScript modules allow you to break up your code into separate files.
+This makes it easier to maintain the code-base
+JavaScript modules rely on the ```import``` and ```export``` statements
+
+### Exports
+We can label any declaration as exported by placing ```export``` before it.
+``` javascript
+// export an array
+export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// export a constant
+export const MODULES_BECAME_STANDARD_YEAR = 2015;
+
+// export a class
+export class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
+
+We can also export apart from declarations
+``` javascript
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+
+function sayBye(user) {
+  alert(`Bye, ${user}!`);
+}
+
+export {sayHi, sayBye}; // a list of exported variables
+```
+
+### Import
+``` javascript
+import {sayHi, sayBye} from './say.js';
+
+sayHi('John'); // Hello, John!
+sayBye('John'); // Bye, John!
+```
+But if there are many things to import, we can import everything as an object.
+``` javascript
+import * as say from './say.js';
+
+say.sayHi('John');
+say.sayBye('John');
+```
