@@ -18,7 +18,7 @@ All JavaScript **variables** must be identified with **unique names**. These uni
 
 JavaScript can add strings and numbers: ```let x = "5" + 2 + 3;``` will get ```523```.
 
-Describing nothing:
+Describing nothing(```undefined``` and ```null`` are equal in value but differenet in type):
 ``` javascript
 const notexist = undefined
 const existbutnothing = null
@@ -405,4 +405,104 @@ import * as say from './say.js';
 
 say.sayHi('John');
 say.sayBye('John');
+```
+
+## Types
+### Types and typeof
+In javascript, there are 5 different data types that can contain values:
+- string
+- number
+- boolean
+- object
+- function
+
+There are 6 types of objects:
+- Object
+- Date
+- Array
+- String
+- Number
+- Boolean
+
+And 2 data types that cannot contain values:
+- null
+- undefined
+
+We can use ```typeof``` operator to find the data type of a javascript variable.
+``` javascript
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"
+```
+
+### type conversion
+Number methods:
+- Number() - returns a number, converted from its argument
+- parseFloat() - parses a string and returns a floating point number
+- parseInt() - parses a string and returns an integer
+- ```+``` unary + operator can be used to convert a variable to a number
+
+``` javascript
+Number("3.14")    // returns 3.14
+Number(" ")       // returns 0
+Number("")        // returns 0
+Number("99 88")   // returns NaN
+
+let y = "5";      // y is a string
+let x = + y;      // x is a number
+```
+
+Converting numbers to strings with the global method ```string()```:
+``` javascript
+String(x)         // returns a string from a number variable x
+String(123)       // returns a string from a number literal 123
+String(100 + 23)  // returns a string from a number from an expression
+```
+
+The Number method ```toString()``` does the same:
+``` javascript
+x.toString()
+(123).toString()
+(100 + 23).toString()
+```
+
+More string methods:
+- toExponential() - returns a string, with a number rounded and written using exponential notation
+- toFixed() - returns a string, with a number rounded and written with a specified number of decimals
+- toPrecision() - returns a string, with a number written with a specified length
+
+Converting dates to strings:
+the global method ```String()``` can convert dates to strings.
+``` javascript
+String(Date())  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+```
+
+More Date methods:
+- getDate() - get the day as a number
+- getDay() - get the weekday a number
+- getFullYear() - get the four digit year
+- getHours() - get the hour
+- getMilliseconds() - get the milliseconds
+- getMinutes() - get the minutes
+- getMonth() - get the month
+- getSeconds() - get the seconds
+- getTime() - get the time (milliseconds since January 1, 1970)
+
+Converting booleans to numbers:
+``` javascript
+Number(false)     // returns 0
+Number(true)      // returns 1
+```
+
+Converting booleans to strings:
+``` javascript
+String(false)      // returns "false"
+String(true)       // returns "true"
 ```
