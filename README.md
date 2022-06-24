@@ -524,3 +524,40 @@ hello = (val) => "Hello " + val;
 
 // arrow function without parentheses(when having only one parameter)
 hello = val => "Hello " + val;
+
+## Spread syntax
+The spread syntax is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
+
+The spread syntax is denoted by three dots.
+``` javascript
+let array = [...value]
+```
+
+Examples:
+1. Copying an array
+``` javascript
+let array1 = ['h', 'e', 'l', 'l', 'o'];
+let array2 = [...array1];
+console.log(array2);
+['h', 'e', 'l', 'l', 'o'] // output
+```
+2. Inserting the elements of one array into another
+``` javascript
+let desserts = ['cake', 'cookie', 'donut'];
+let desserts1 = ['icecream', 'flan', 'frozen yoghurt', ...desserts];
+console.log(desserts);
+//Appending baked_desserts after flan
+let desserts2 = ['icecream', 'flan', ...desserts, 'frozen yoghurt'];
+console.log(desserts2);
+// output
+[ 'cake', 'cookie', 'donut' ]
+[ 'icecream', 'flan', 'cake', 'cookie', 'donut', 'frozen yoghurt' ]
+```
+3. Array to arguments
+``` javascript
+function multiply(number1, number2, number3) {
+  console.log(number1 * number2 * number3);
+}
+let numbers = [1,2,3];
+multiply(...numbers);
+```
